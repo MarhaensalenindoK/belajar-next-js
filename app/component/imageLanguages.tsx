@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 // Define a reusable ImageTile component
-const ImageTile = ({ src, alt }) => (
+const ImageTile = ({ src, alt }:any) => (
     <div>
         <Image
         src={src}

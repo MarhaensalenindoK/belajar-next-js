@@ -15,15 +15,15 @@ import FontAwesomeIcon from "./component/FontAwesome";
 import Link from "next/link";
 
 // Helper function for linear interpolation
-function lerp(start, end, t) {
+function lerp(start:any, end:any, t:any) {
     return start * (1 - t) + end * t;
 }
 
 // The reusable function to start the gradient animation
-function startGradientAnimation(gradientElement, startColors, endColors, basicColor, typeGradient) {
-    let startTime = null;
+function startGradientAnimation(gradientElement:any, startColors:any, endColors:any, basicColor:any, typeGradient:any) {
+    let startTime: number | null = null;
 
-    const step = (timestamp) => {
+    const step = (timestamp: number | 0) => {
         if (!startTime) startTime = timestamp;
         const progress = (timestamp - startTime) / 2000; // Adjust duration as needed
 
@@ -357,7 +357,7 @@ return (
                 Contact me
             </h1>
 
-            <div className="container p-4 mb-6 w-full lg:w-1/2 shadow-lg rounded-lg bg-cream text-darkBlue mx-auto shadow-2xl mt-4"
+            <div className="container p-4 mb-6 w-full lg:w-1/2 shadow-lg rounded-lg bg-cream text-darkBlue mx-auto mt-4"
             data-aos="zoom-in-up"
             data-aos-delay="200">
                 <div className="p-5 lg:p-10">

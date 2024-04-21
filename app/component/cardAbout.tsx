@@ -2,7 +2,7 @@ import React from 'react';
 import FontAwesomeIcon from "../component/FontAwesome";
 
 interface Props {
-    icon?: [string, string] | string[],
+    icon: [string, string],
     title?: string,
     items?: string[],
     colorContent?: string,
@@ -30,7 +30,7 @@ export default function CardAbout(cardProps: Props) {
             <div className={`shadow-lg px-4 py-4 m-3 text-center rounded-lg min-h-96 bg-gradient-to-r from-cyan-500 ${colorCard || "to-pink-500"}`}>
                 <i>
                     <FontAwesomeIcon
-                        icon={icon}
+                        icon={icon ?? ''}
                         size="5x"
                         className={`mb-6 text-${colorContent ?? 'text-cream'}`}
                     />

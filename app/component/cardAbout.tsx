@@ -2,7 +2,7 @@ import React from 'react';
 import FontAwesomeIcon from "../component/FontAwesome";
 
 interface Props {
-    icon: [string, string],
+    icon: any,
     title?: string,
     items?: string[],
     colorContent?: string,

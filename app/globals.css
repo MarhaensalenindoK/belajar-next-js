@@ -17,17 +17,108 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  /* color: rgb(var(--foreground-rgb)); */
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@keyframes gradientTransition {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* .hover-gradient {
+  background-position: right center;
+  color: #F9E8C9;
+}
+
+.hover-gradient:hover {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.5s;
+
+  background: linear-gradient(270deg, #98ABEE, #F9E8C9);
+  background-size: 200% 200%;
+  transition: background-position 2s, color 2s;
+} */
+
+.hover-gradient {
+  position: relative;
+  color: #F9E8C9; /* Warna teks default */
+  overflow: hidden; /* Mencegah pseudo-element keluar dari batas */
+}
+
+.hover-gradient:hover {
+  color: #201658;
+}
+
+.hover-gradient::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, #98ABEE, #F9E8C9);
+  background-size: 200% 200%;
+  opacity: 0; /* Transparan secara default */
+  transition: opacity 0.7s; /* Transisi untuk opasitas */
+  z-index: -1;
+}
+
+.hover-gradient:hover::after {
+  opacity: 1; /* Penuh opasitas saat hover */
+}
+
+.image-hover-plus {
+  position: relative;
+  cursor: pointer;
+}
+
+.image-hover-plus .plus-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 5;
+}
+
+.image-hover-plus:hover .plus-svg {
+  opacity: 0.8;
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.image-hover-plus img {
+  transition: filter 0.3s ease;
+}
+
+.image-hover-plus:hover img {
+  filter: brightness(70%);
+}
+
+.gradient-about {
+  transition: background-image 1s ease;
+}
+
+.gradient-instagram {
+  background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
 }
